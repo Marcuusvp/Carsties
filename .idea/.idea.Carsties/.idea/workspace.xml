@@ -9,9 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Carsties.sln" afterDir="false" />
+    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="First Commit">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AuctionServices/Data/AuctionDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AuctionServices/Data/DbInitializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AuctionServices/Entities/Status.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carsties.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Carsties.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AuctionServices/AuctionServices.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/AuctionServices.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AuctionServices/Entities/Auction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/Entities/Auction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AuctionServices/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AuctionServices/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +31,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb36ff12d42b4e70978c86f2ab298b1226ac28/9c/e87c27af/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
@@ -45,6 +60,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.AuctionServices: http">
@@ -93,6 +113,44 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="AuctionServices/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="auctionservices" />
+          <option name="containerName" value="auctionservices" />
+          <option name="contextFolderPath" value="C:\Users\marcu\source\repos\Carsties" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="127.0.0.1" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/AuctionServices/Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="compose.yaml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,13 +160,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737154057604</updated>
-      <workItem from="1737154059707" duration="3058000" />
+      <workItem from="1737154059707" duration="8563000" />
     </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1737160172233</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737160172233</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -123,5 +191,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
 </project>
