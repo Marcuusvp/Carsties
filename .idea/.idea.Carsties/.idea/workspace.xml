@@ -9,12 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="iniciando alguns endpoints">
+    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="fechando os cruds basicos">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuctionServices/Controllers/AuctionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/Controllers/AuctionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuctionServices/DTOs/UpdateAuctionDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/DTOs/UpdateAuctionDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuctionServices/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuctionServices/RequestHelpers/MappingProfiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/RequestHelpers/MappingProfiles.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +37,7 @@
 }]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb36ff12d42b4e70978c86f2ab298b1226ac28/9c/e87c27af/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/Controllers/AuctionsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/DTOs/AuctionDto.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -124,6 +121,51 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="SearchService: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/SearchService/SearchService.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="SearchService: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/SearchService/SearchService.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="SearchService: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/SearchService/SearchService.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="AuctionServices/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -171,7 +213,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737154057604</updated>
-      <workItem from="1737154059707" duration="15317000" />
+      <workItem from="1737154059707" duration="16607000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -197,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737230298906</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fechando os cruds basicos">
+      <option name="closed" value="true" />
+      <created>1737233026134</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737233026134</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +271,7 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Adicionando dbContext e EntityFramweork" />
     <MESSAGE value="iniciando alguns endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="iniciando alguns endpoints" />
+    <MESSAGE value="fechando os cruds basicos" />
+    <option name="LAST_COMMIT_MESSAGE" value="fechando os cruds basicos" />
   </component>
 </project>
