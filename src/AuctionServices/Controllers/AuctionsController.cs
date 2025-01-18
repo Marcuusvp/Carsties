@@ -37,7 +37,7 @@ public class AuctionsController : ControllerBase
             .Include(x => x.Item)
             .FirstOrDefaultAsync(x => x.Id == id);
         
-        if (auction == null) return NotFound();
+        if (auction is null) return NotFound();
         return _mapper.Map<AuctionDto>(auction);
     }
 
@@ -50,5 +50,38 @@ public class AuctionsController : ControllerBase
         var result = await _context.SaveChangesAsync() > 0;
         if (!result) return BadRequest("Não foi possível criar o leilão");
         return CreatedAtAction(nameof(GetAuctionById), new {auction.Id}, _mapper.Map<AuctionDto>(auction));
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateAuction(Guid id, UpdateAuctionDto updateAuctionDto)
+    {
+        var auction = await _context.Auctions.Include(x => x.Item)
+            .FirstOrDefaultAsync(x => x.Id == id);
+        if (auction is null) return NotFound();
+        
+        // TODO: check seller == username
+        
+        auction.Item.Make = updateAuctionDto.Make ?? auction.Item.Make;
+        auction.Item.Model = updateAuctionDto.Model ?? auction.Item.Model;
+        auction.Item.Color = updateAuctionDto.Color ?? auction.Item.Color;
+        auction.Item.Mileage = updateAuctionDto.Mileage ?? auction.Item.Mileage;
+        auction.Item.Year = updateAuctionDto.Year ?? auction.Item.Year;
+
+        var result = await _context.SaveChangesAsync() > 0;
+        if (!result) return BadRequest("Não foi possível atualizar");
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteAuction(Guid id)
+    {
+        var auction = await _context.Auctions.FindAsync(id);
+        if (auction is null) return NotFound();
+        // TODO: check seller == username
+        
+        _context.Auctions.Remove(auction);
+        var result = await _context.SaveChangesAsync() > 0;
+        if (!result) return BadRequest("Não foi possível excluir");
+        return Ok();
     }
 }
