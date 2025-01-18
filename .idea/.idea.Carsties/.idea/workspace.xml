@@ -9,17 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AuctionServices/Data/AuctionDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AuctionServices/Data/DbInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AuctionServices/Entities/Status.cs" afterDir="false" />
+    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="Adicionando dbContext e EntityFramweork">
+      <change afterPath="$PROJECT_DIR$/src/AuctionServices/Controllers/AuctionsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AuctionServices/DTOs/CreateAuctionDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AuctionServices/DTOs/UpdateAuctionDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AuctionServices/RequestHelpers/MappingProfiles.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carsties.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Carsties.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AuctionServices/AuctionServices.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/AuctionServices.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuctionServices/Entities/Auction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/Entities/Auction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AuctionServices/DTOs/AuctionDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/DTOs/AuctionDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AuctionServices/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuctionServices/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +35,15 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
   <component name="ProjectId" id="2rmApAOWJI9WNCqBycPEqSsbfqV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -160,7 +160,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737154057604</updated>
-      <workItem from="1737154059707" duration="8563000" />
+      <workItem from="1737154059707" duration="12787000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -170,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737160172233</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adicionando dbContext e EntityFramweork">
+      <option name="closed" value="true" />
+      <created>1737219466628</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737219466628</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +200,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="Adicionando dbContext e EntityFramweork" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando dbContext e EntityFramweork" />
   </component>
 </project>
