@@ -4,80 +4,11 @@
     <root id="1">
       <ServerVersion>8.0.4</ServerVersion>
     </root>
-    <schema id="2" parent="1" name="SearchDb">
-      <LastIntrospectionLocalTimestamp>2025-01-18.22:09:12</LastIntrospectionLocalTimestamp>
+    <schema id="2" parent="1" name="SearchDb"/>
+    <schema id="3" parent="1" name="admin">
+      <LastIntrospectionLocalTimestamp>2025-01-19.18:10:38</LastIntrospectionLocalTimestamp>
     </schema>
-    <schema id="3" parent="1" name="admin"/>
     <schema id="4" parent="1" name="config"/>
     <schema id="5" parent="1" name="local"/>
-    <table id="6" parent="2" name="Item"/>
-    <column id="7" parent="6" name="_id">
-      <Position>1</Position>
-      <StoredType>String|12s</StoredType>
-    </column>
-    <column id="8" parent="6" name="AuctionEnd">
-      <Position>2</Position>
-      <StoredType>ISODate|91s</StoredType>
-    </column>
-    <column id="9" parent="6" name="Color">
-      <Position>3</Position>
-      <StoredType>String|12s</StoredType>
-    </column>
-    <column id="10" parent="6" name="CreatedAt">
-      <Position>4</Position>
-      <StoredType>ISODate|91s</StoredType>
-    </column>
-    <column id="11" parent="6" name="CurrentHighBid">
-      <Position>5</Position>
-      <StoredType>Int32|4s</StoredType>
-    </column>
-    <column id="12" parent="6" name="ImageUrl">
-      <Position>6</Position>
-      <StoredType>String|12s</StoredType>
-    </column>
-    <column id="13" parent="6" name="Make">
-      <Position>7</Position>
-      <StoredType>String|12s</StoredType>
-    </column>
-    <column id="14" parent="6" name="Mileage">
-      <Position>8</Position>
-      <StoredType>Int32|4s</StoredType>
-    </column>
-    <column id="15" parent="6" name="Model">
-      <Position>9</Position>
-      <StoredType>String|12s</StoredType>
-    </column>
-    <column id="16" parent="6" name="ReservePrice">
-      <Position>10</Position>
-      <StoredType>Int32|4s</StoredType>
-    </column>
-    <column id="17" parent="6" name="Seller">
-      <Position>11</Position>
-      <StoredType>String|12s</StoredType>
-    </column>
-    <column id="18" parent="6" name="SoldAmount">
-      <Position>12</Position>
-      <StoredType>Int32|4s</StoredType>
-    </column>
-    <column id="19" parent="6" name="Status">
-      <Position>13</Position>
-      <StoredType>String|12s</StoredType>
-    </column>
-    <column id="20" parent="6" name="UpdatedAt">
-      <Position>14</Position>
-      <StoredType>ISODate|91s</StoredType>
-    </column>
-    <column id="21" parent="6" name="Winner">
-      <Position>15</Position>
-      <StoredType>String|12s</StoredType>
-    </column>
-    <column id="22" parent="6" name="Year">
-      <Position>16</Position>
-      <StoredType>Int32|4s</StoredType>
-    </column>
-    <index id="23" parent="6" name="_id_">
-      <ColNames>_id</ColNames>
-      <Unique>1</Unique>
-    </index>
   </database-model>
 </dataSource>

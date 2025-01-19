@@ -12,16 +12,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="Adicionando mongodb ao projeto">
-      <change afterPath="$PROJECT_DIR$/src/SearchService/Controllers/SearchController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchService/Data/DbInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchService/Data/auctions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchService/RequestHelpers/SearchParams.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="fechando filtros de consulta">
+      <change afterPath="$PROJECT_DIR$/src/SearchService/Services/AuctionServiceHttpClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources/93c95496-7fd1-4e92-8d8e-50d564359ed6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources/93c95496-7fd1-4e92-8d8e-50d564359ed6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AuctionServices/Controllers/AuctionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/Controllers/AuctionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchService/Controllers/SearchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/Controllers/SearchController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchService/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/Data/DbInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchService/SearchService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/SearchService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchService/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +56,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb36ff12d42b4e70978c86f2ab298b1226ac28/9c/e87c27af/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/Controllers/AuctionsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/DTOs/AuctionDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/SearchService/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/SearchService/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/SearchService/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -235,7 +235,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737154057604</updated>
-      <workItem from="1737154059707" duration="21937000" />
+      <workItem from="1737154059707" duration="24291000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -285,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737237345812</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fechando filtros de consulta">
+      <option name="closed" value="true" />
+      <created>1737309131530</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737309131530</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +320,7 @@
     <MESSAGE value="fechando os cruds basicos" />
     <MESSAGE value="commit scaffold webapi" />
     <MESSAGE value="Adicionando mongodb ao projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionando mongodb ao projeto" />
+    <MESSAGE value="fechando filtros de consulta" />
+    <option name="LAST_COMMIT_MESSAGE" value="fechando filtros de consulta" />
   </component>
 </project>

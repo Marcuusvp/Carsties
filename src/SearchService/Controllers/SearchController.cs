@@ -9,11 +9,6 @@ namespace SearchService.Controllers;
  [Route("api/search")]
 public class SearchController : ControllerBase
 {
-    public SearchController()
-    {
-        
-    }
-
     [HttpGet]
     public async Task<ActionResult<List<Item>>> SearchItems([FromQuery] SearchParams searchParams)
     {
