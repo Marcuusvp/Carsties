@@ -12,15 +12,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="fechando filtros de consulta">
-      <change afterPath="$PROJECT_DIR$/src/SearchService/Services/AuctionServiceHttpClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources/93c95496-7fd1-4e92-8d8e-50d564359ed6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/dataSources/93c95496-7fd1-4e92-8d8e-50d564359ed6.xml" afterDir="false" />
+    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="adicionando comunicação sincrona Http entre servicos e ajustando initDb para consultar dados ao rodar">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AuctionServices/Controllers/AuctionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/AuctionServices/Controllers/AuctionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchService/Controllers/SearchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/Controllers/SearchController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchService/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/Data/DbInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchService/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchService/SearchService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/SearchService.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +230,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737154057604</updated>
-      <workItem from="1737154059707" duration="24291000" />
+      <workItem from="1737154059707" duration="25726000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -293,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737309131530</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adicionando comunicação sincrona Http entre servicos e ajustando initDb para consultar dados ao rodar">
+      <option name="closed" value="true" />
+      <created>1737310647420</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737310647420</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +324,7 @@
     <MESSAGE value="commit scaffold webapi" />
     <MESSAGE value="Adicionando mongodb ao projeto" />
     <MESSAGE value="fechando filtros de consulta" />
-    <option name="LAST_COMMIT_MESSAGE" value="fechando filtros de consulta" />
+    <MESSAGE value="adicionando comunicação sincrona Http entre servicos e ajustando initDb para consultar dados ao rodar" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionando comunicação sincrona Http entre servicos e ajustando initDb para consultar dados ao rodar" />
   </component>
 </project>
