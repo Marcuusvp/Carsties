@@ -57,12 +57,12 @@ public class AuctionsController : ControllerBase
         auction.Seller = "teste";
 
         _context.Auctions.Add(auction);
-
-        var result = await _context.SaveChangesAsync() > 0;
         //publicando no rabbit
         var newAuction = _mapper.Map<AuctionDto>(auction);
         await _publishEndpoint.Publish(_mapper.Map<AuctionCreated>(newAuction));
         //fim do publish
+        var result = await _context.SaveChangesAsync() > 0;
+
         if (!result) return BadRequest("Não foi possível criar o leilão");
 
         return CreatedAtAction(nameof(GetAuctionById), new {auction.Id}, newAuction);
