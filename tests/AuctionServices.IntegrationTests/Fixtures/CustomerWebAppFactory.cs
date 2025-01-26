@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Testcontainers.PostgreSql;
+using WebMotions.Fake.Authentication.JwtBearer;
 
 namespace AuctionServices.IntegrationTests.Fixtures;
 
@@ -34,6 +35,13 @@ public class CustomerWebAppFactory : WebApplicationFactory<Program>, IAsyncLifet
             
             // Criando o banco de dados de teste
             services.EnsureCreated<AuctionDbContext>();
+            
+            // Configurando autenticação
+            services.AddAuthentication(FakeJwtBearerDefaults.AuthenticationScheme)
+                .AddFakeJwtBearer(opt =>
+                {
+                    opt.BearerValueType = FakeJwtBearerBearerValueType.Jwt;
+                });
         });
     }
     Task IAsyncLifetime.DisposeAsync() => _postgreSqlContainer.DisposeAsync().AsTask();
