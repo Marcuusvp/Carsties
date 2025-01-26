@@ -1,4 +1,12 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+# 1. Cria a pasta de chaves:
+RUN mkdir -p /app/keys
+# 2. Ajusta permissões para o seu usuário não-root (por exemplo 1001:1001 ou $APP_UID:$APP_UID):
+#    Se você sabe o UID numérico, use direto. Se for $APP_UID e for algo como "appuser",
+#    pode precisar do --chown com COPY ou instalar chown no container. 
+#    Para simplificar, pode liberar geral com chmod 777 (mas é menos seguro).
+RUN chmod -R 777 /app/keys
+# 3. Agora sim muda para seu usuário não-root
 USER $APP_UID
 WORKDIR /app
 EXPOSE 80
