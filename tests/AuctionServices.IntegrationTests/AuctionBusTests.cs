@@ -9,8 +9,8 @@ using MassTransit.Testing;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AuctionServices.IntegrationTests;
-
-public class AuctionBusTests : IClassFixture<CustomerWebAppFactory>, IAsyncLifetime
+[Collection("Shared collection")]
+public class AuctionBusTests : IAsyncLifetime
 {
     private readonly CustomerWebAppFactory _factory;
     private readonly HttpClient _httpClient;
