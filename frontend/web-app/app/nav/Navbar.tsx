@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaCarAlt } from "react-icons/fa";
+import Search from './Search';
 
 export default function Navbar() {
   return (
@@ -12,7 +13,7 @@ export default function Navbar() {
          Carsties Auctions
         </div>
       </div>
-      <div>Search</div>
+      <Search />
       <div>Login</div>
     </header>
   )
