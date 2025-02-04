@@ -4,14 +4,27 @@ import { Button } from 'flowbite-react';
 import React, { useEffect } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import Input from '../components/input';
+import DateInput from '../components/DateInput';
+import { createAuction } from '../actions/auctionActions';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast'
 
 export default function AuctionForm() {
-    const {control, handleSubmit, setFocus, formState: {isSubmitting, isValid, isDirty, errors}} = useForm({
+    const router = useRouter();
+    const {control, handleSubmit, setFocus, formState: {isSubmitting, isValid}} = useForm({
         mode: 'onTouched'
     });
 
-    function onSubmit(data: FieldValues) {
-        console.log(data);
+    async function onSubmit(data: FieldValues) {
+        try{
+            const res = await createAuction(data)
+            if (res.error) {
+                throw res.error;
+            }
+            router.push(`/auctions/details/${res.id}`)
+        } catch(error: any) {
+            toast.error(error.status + ' ' + error.message)
+        }
     }
 
     useEffect(() => {
@@ -33,7 +46,14 @@ export default function AuctionForm() {
 
             <div className='grid grid-cols-2 gap-3'>
                 <Input label='Preço minimo' type='number' name='reservePrice' control={control} rules={{required: 'Informe um valor minimo ou 0 para lances livres'}}/>
-                <Input label='Auction end date/time' name='auctionEnd' type='date' control={control} rules={{required: 'Informe a data de fim do leilao'}}/>
+                <DateInput 
+                    label='Auction end date/time' 
+                    name='auctionEnd' 
+                    dateFormat='dd MMMM yyyy h:mm a'
+                    showTimeSelect
+                    control={control} 
+                    rules={{required: 'Informe a data de fim do leilao'}}
+                />
             </div>
 
             <div className='flex justify-between'>
@@ -41,7 +61,7 @@ export default function AuctionForm() {
                 <Button 
                     isProcessing={isSubmitting} 
                     outline 
-                    color='success' 
+                    color='success'
                     disabled={!isValid}
                     type='submit'
                 >
