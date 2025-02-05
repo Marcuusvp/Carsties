@@ -9,6 +9,7 @@ import { createAuction, updateAuction } from '../actions/auctionActions';
 import { usePathname, useRouter } from 'next/navigation';
 import toast from 'react-hot-toast'
 import { Auction } from '@/types';
+import ImageUploader from './ImageUploader';
 
 type Props = {
    auction?: Auction 
@@ -64,6 +65,7 @@ export default function AuctionForm({auction}: Props) {
 
             {pathname === '/auctions/create' && 
                 <>
+                    <ImageUploader/>
                     <Input label='Imagem' name='imageUrl' control={control} rules={{required: 'é necessário enviar uma imagem'}}/>
 
                     <div className='grid grid-cols-2 gap-3'>
