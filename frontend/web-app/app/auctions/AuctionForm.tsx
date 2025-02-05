@@ -5,29 +5,49 @@ import React, { useEffect } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import Input from '../components/input';
 import DateInput from '../components/DateInput';
-import { createAuction } from '../actions/auctionActions';
-import { useRouter } from 'next/navigation';
+import { createAuction, updateAuction } from '../actions/auctionActions';
+import { usePathname, useRouter } from 'next/navigation';
 import toast from 'react-hot-toast'
+import { Auction } from '@/types';
 
-export default function AuctionForm() {
+type Props = {
+   auction?: Auction 
+}
+
+export default function AuctionForm({auction}: Props) {
     const router = useRouter();
-    const {control, handleSubmit, setFocus, formState: {isSubmitting, isValid}} = useForm({
+    const pathname = usePathname();
+    const {control, handleSubmit, setFocus, reset, formState: {isSubmitting, isValid}} = useForm({
         mode: 'onTouched'
     });
 
     async function onSubmit(data: FieldValues) {
         try{
-            const res = await createAuction(data)
+            let id = '';
+            let res;
+            if(pathname === '/auctions/create'){
+                const res = await createAuction(data)
+                id = res.id;
+            } else {
+                if (auction) {
+                    res = await updateAuction(data, auction.id)
+                    id = auction.id;
+                }
+            }
             if (res.error) {
                 throw res.error;
             }
-            router.push(`/auctions/details/${res.id}`)
+            router.push(`/auctions/details/${id}`)
         } catch(error: any) {
             toast.error(error.status + ' ' + error.message)
         }
     }
 
     useEffect(() => {
+        if (auction) {
+            const {make, model, color, mileage, year} = auction;
+            reset({make, model, color, mileage, year})
+        }
         setFocus('make')
     }, [setFocus])
 
@@ -42,19 +62,23 @@ export default function AuctionForm() {
                 <Input label='Kilometragem' name='mileage' type='number' control={control} rules={{required: 'Informe o ano do veículo'}}/>
             </div>
 
-            <Input label='Imagem' name='imageUrl' control={control} rules={{required: 'é necessário enviar uma imagem'}}/>
+            {pathname === '/auctions/create' && 
+                <>
+                    <Input label='Imagem' name='imageUrl' control={control} rules={{required: 'é necessário enviar uma imagem'}}/>
 
-            <div className='grid grid-cols-2 gap-3'>
-                <Input label='Preço minimo' type='number' name='reservePrice' control={control} rules={{required: 'Informe um valor minimo ou 0 para lances livres'}}/>
-                <DateInput 
-                    label='Auction end date/time' 
-                    name='auctionEnd' 
-                    dateFormat='dd MMMM yyyy h:mm a'
-                    showTimeSelect
-                    control={control} 
-                    rules={{required: 'Informe a data de fim do leilao'}}
-                />
-            </div>
+                    <div className='grid grid-cols-2 gap-3'>
+                        <Input label='Preço minimo' type='number' name='reservePrice' control={control} rules={{required: 'Informe um valor minimo ou 0 para lances livres'}}/>
+                        <DateInput 
+                            label='Auction end date/time' 
+                            name='auctionEnd' 
+                            dateFormat='dd MMMM yyyy h:mm a'
+                            showTimeSelect
+                            control={control} 
+                            rules={{required: 'Informe a data de fim do leilao'}}
+                            />
+                    </div>
+                </>            
+            }
 
             <div className='flex justify-between'>
                 <Button outline color='gray'>Cancel</Button>
