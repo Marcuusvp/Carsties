@@ -5,11 +5,12 @@ import React, { useEffect } from 'react'
 import { FieldValues, useForm } from 'react-hook-form'
 import Input from '../components/input';
 import DateInput from '../components/DateInput';
-import { createAuction, updateAuction } from '../actions/auctionActions';
+import { createAuction, deleteImage, updateAuction } from '../actions/auctionActions';
 import { usePathname, useRouter } from 'next/navigation';
 import toast from 'react-hot-toast'
 import { Auction } from '@/types';
 import ImageUploader from './ImageUploader';
+import { useImageStore } from '@/hooks/useImageStore';
 
 type Props = {
    auction?: Auction 
@@ -18,16 +19,22 @@ type Props = {
 export default function AuctionForm({auction}: Props) {
     const router = useRouter();
     const pathname = usePathname();
-    const {control, handleSubmit, setFocus, reset, formState: {isSubmitting, isValid}} = useForm({
-        mode: 'onTouched'
+    const imgUrl = useImageStore(state => state.auctionImages)
+    const resetImages = useImageStore(state => state.reset)
+    const {control, handleSubmit, setFocus, reset, formState: {isSubmitting, isValid}, setValue} = useForm({
+        mode: 'onTouched',
     });
 
     async function onSubmit(data: FieldValues) {
+        const formData = {
+            ...data,
+            imageUrl: imgUrl[0]?.url.toString() || ''
+        }
         try{
             let id = '';
             let res;
             if(pathname === '/auctions/create'){
-                const res = await createAuction(data)
+                res = await createAuction(formData)
                 id = res.id;
             } else {
                 if (auction) {
@@ -38,9 +45,22 @@ export default function AuctionForm({auction}: Props) {
             if (res.error) {
                 throw res.error;
             }
+            resetImages()
             router.push(`/auctions/details/${id}`)
         } catch(error: any) {
             toast.error(error.status + ' ' + error.message)
+        }
+    }
+
+    async function onCancel()  {
+        try {
+            reset()
+            resetImages()
+            imgUrl.map(async (image) => {
+                await deleteImage(`images/${image.uid}/${image.name}`)
+            })
+        } catch {
+            toast.error("não foi possível limpar o formulário")
         }
     }
 
@@ -51,6 +71,17 @@ export default function AuctionForm({auction}: Props) {
         }
         setFocus('make')
     }, [setFocus])
+
+    useEffect(() => {
+        if (imgUrl.length > 0) {
+            setValue('imageUrl', imgUrl[0].url, { 
+                shouldValidate: true,
+                shouldDirty: true
+            })
+        } else {
+            setValue('imageUrl', '')
+        }
+    }, [imgUrl, setValue])
 
     return (
         <form className='flex flex-col mt-3' onSubmit={handleSubmit(onSubmit)}>
@@ -66,7 +97,7 @@ export default function AuctionForm({auction}: Props) {
             {pathname === '/auctions/create' && 
                 <>
                     <ImageUploader/>
-                    <Input label='Imagem' name='imageUrl' control={control} rules={{required: 'é necessário enviar uma imagem'}}/>
+                    <Input label='Imagem' name='imageUrl' control={control} rules={{required: 'é necessário enviar uma imagem'}} disabled={imgUrl.length > 0}/>
 
                     <div className='grid grid-cols-2 gap-3'>
                         <Input label='Preço minimo' type='number' name='reservePrice' control={control} rules={{required: 'Informe um valor minimo ou 0 para lances livres'}}/>
@@ -83,7 +114,7 @@ export default function AuctionForm({auction}: Props) {
             }
 
             <div className='flex justify-between'>
-                <Button outline color='gray'>Cancel</Button>
+                <Button outline color='gray' onClick={onCancel}>Cancel</Button>
                 <Button 
                     isProcessing={isSubmitting} 
                     outline 

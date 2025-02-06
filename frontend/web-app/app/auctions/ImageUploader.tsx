@@ -1,8 +1,9 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent } from 'react'
 import toast from 'react-hot-toast'
 import { FiTrash, FiUpload } from 'react-icons/fi'
 import { deleteImage, handleUploadImage } from '../actions/auctionActions';
 import Image from 'next/image';
+import { useImageStore } from '@/hooks/useImageStore';
 
 export type ImageProps = {
     uid: string
@@ -12,8 +13,8 @@ export type ImageProps = {
 }
 
 export default function ImageUploader() {    
-    const [itemImages, setItemImages] = useState<ImageProps[]>([]);
-
+    const auctionImages = useImageStore(state => state.auctionImages)
+    const setSearchValue = useImageStore(state => state.setSearchValue)
 
     async function handleFile(e: ChangeEvent<HTMLInputElement>) {
         if (e.target.files && e.target.files[0]){
@@ -27,7 +28,7 @@ export default function ImageUploader() {
             if(image.type === 'image/jpeg' || image.type === 'image/png'){
                 const result = await handleUploadImage(e.target.files[0])
                 if (result !== undefined){
-                    setItemImages((images) => [...images, result])
+                    setSearchValue([...auctionImages, result])
                 } else {
                     toast.error("Erro ao salvar sua imagem, tente novamente.")
                 }
@@ -41,8 +42,9 @@ export default function ImageUploader() {
         const imagePath = `images/${item.uid}/${item.name}`
         try {
             await deleteImage(imagePath)
-            console.log(itemImages)
-            setItemImages(itemImages.filter((Filtered) => Filtered.url !== item.url))
+            console.log(auctionImages)
+            const newImages = auctionImages.filter((Filtered) => Filtered.url !== item.url)
+            setSearchValue(newImages) // Atualiza diretamente o Zustand
         } catch (err) {
             throw err
         }
@@ -59,7 +61,7 @@ export default function ImageUploader() {
             </div>
         </button>
 
-        {itemImages.map( item => (
+        {auctionImages.map( item => (
             <div key={item.name} className='w-full h-32 flex items-center justify-center relative'>
                 <button className='absolute' onClick={() => handleDeleteImage(item)}>
                     <FiTrash size={28} color="FFF"/>
