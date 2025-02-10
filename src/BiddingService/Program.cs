@@ -40,6 +40,7 @@ builder.Services.AddHostedService<CheckAuctionFinished>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<GrpcAuctionClient>();
 
 var app = builder.Build();
 
