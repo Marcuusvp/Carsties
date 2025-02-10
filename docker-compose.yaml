@@ -36,7 +36,7 @@
       - RabbitMq__Username=guest
       - RabbitMq__Password=guest
       - IdentityServiceUrl=http://identity-svc
-      - Kestrel__Endpoints__Grpc__Protocols=Htt2
+      - Kestrel__Endpoints__Grpc__Protocols=Http2
       - Kestrel__Endpoints__Grpc__Url=http://+:7777
       - Kestrel__Endpoints__WebApi__Protocols=Http1
       - Kestrel__Endpoints__WebApi__Url=http://+:80
