@@ -4,6 +4,17 @@
     <projectFile profileName="IIS Express">src/AuctionServices/AuctionServices.csproj</projectFile>
     <projectFile profileName="http">src/AuctionServices/AuctionServices.csproj</projectFile>
     <projectFile profileName="https">src/AuctionServices/AuctionServices.csproj</projectFile>
+    <projectFile profileName="IIS Express">src/BiddingService/BiddingService.csproj</projectFile>
+    <projectFile profileName="http">src/BiddingService/BiddingService.csproj</projectFile>
+    <projectFile profileName="https">src/BiddingService/BiddingService.csproj</projectFile>
+    <projectFile kind="Docker">src/GatewayService/GatewayService.csproj</projectFile>
+    <projectFile profileName="http">src/GatewayService/GatewayService.csproj</projectFile>
+    <projectFile kind="Docker">src/IdentityService/IdentityService.csproj</projectFile>
+    <projectFile profileName="SelfHost">src/IdentityService/IdentityService.csproj</projectFile>
+    <projectFile profileName="IIS Express">src/NotificationService/NotificationService.csproj</projectFile>
+    <projectFile profileName="http">src/NotificationService/NotificationService.csproj</projectFile>
+    <projectFile profileName="https">src/NotificationService/NotificationService.csproj</projectFile>
+    <projectFile kind="Docker">src/SearchService/SearchService.csproj</projectFile>
     <projectFile profileName="IIS Express">src/SearchService/SearchService.csproj</projectFile>
     <projectFile profileName="http">src/SearchService/SearchService.csproj</projectFile>
     <projectFile profileName="https">src/SearchService/SearchService.csproj</projectFile>
@@ -12,10 +23,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="adicionando comunicação sincrona Http entre servicos e ajustando initDb para consultar dados ao rodar">
+    <list default="true" id="f4bd0829-fd9a-425a-869b-7b7ad6de751b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/NotificationService/Hubs/NotificationHub.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Carsties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchService/SearchService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchService/SearchService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Carsties.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Carsties.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GatewayService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/GatewayService/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,35 +45,48 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="imageUpload" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Marcuusvp"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Marcuusvp&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Marcuusvp/Carsties.git",
-    "accountId": "d3e43e63-1785-4c67-82cb-220baafc4f3e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Marcuusvp/Carsties.git&quot;,
+    &quot;accountId&quot;: &quot;d3e43e63-1785-4c67-82cb-220baafc4f3e&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eb36ff12d42b4e70978c86f2ab298b1226ac28/9c/e87c27af/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/Controllers/AuctionsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/DTOs/AuctionDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/SearchService/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/SearchService/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/SearchService/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/AuctionServices/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/BiddingService/Controllers/BidsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/BiddingService/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/BiddingService/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/GatewayService/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/GatewayService/appsettings.Docker.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/marcu/source/repos/Carsties/src/GatewayService/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="SWEA" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2rmApAOWJI9WNCqBycPEqSsbfqV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -73,6 +98,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.AuctionServices: http.executor": "Run",
+    ".NET Launch Settings Profile.BiddingService: http.executor": "Run",
+    ".NET Launch Settings Profile.NotificationService: http.executor": "Run",
     ".NET Launch Settings Profile.SearchService: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -92,7 +119,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.SearchService: http">
+  <component name="RunManager" selected=".NET Launch Settings Profile.NotificationService: http">
     <configuration name="AuctionServices: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/AuctionServices/AuctionServices.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -125,6 +152,96 @@
     </configuration>
     <configuration name="AuctionServices: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/AuctionServices/AuctionServices.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="BiddingService: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/BiddingService/BiddingService.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="BiddingService: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/BiddingService/BiddingService.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="BiddingService: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/BiddingService/BiddingService.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="NotificationService: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/NotificationService/NotificationService.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="NotificationService: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/NotificationService/NotificationService.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="NotificationService: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/NotificationService/NotificationService.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -204,18 +321,54 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration name="BiddingService/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="biddingservice" />
+          <option name="containerName" value="biddingservice" />
+          <option name="contextFolderPath" value="C:\Users\marcu\source\repos\Carsties" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="127.0.0.1" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/BiddingService/Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
     <configuration name="compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="sourceFilePath" value="compose.yaml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
         </settings>
       </deployment>
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
@@ -231,6 +384,10 @@
       <option name="presentableId" value="Default" />
       <updated>1737154057604</updated>
       <workItem from="1737154059707" duration="25726000" />
+      <workItem from="1738967050901" duration="101000" />
+      <workItem from="1738967412211" duration="14596000" />
+      <workItem from="1739224695550" duration="7749000" />
+      <workItem from="1739315188554" duration="1002000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -296,7 +453,119 @@
       <option name="project" value="LOCAL" />
       <updated>1737310647420</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="criando bid service">
+      <option name="closed" value="true" />
+      <created>1738982501860</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738982501860</updated>
+    </task>
+    <task id="LOCAL-00010" summary="criando entidades">
+      <option name="closed" value="true" />
+      <created>1738982892916</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1738982892916</updated>
+    </task>
+    <task id="LOCAL-00011" summary="iniciando a criação de bids">
+      <option name="closed" value="true" />
+      <created>1738983644808</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1738983644808</updated>
+    </task>
+    <task id="LOCAL-00012" summary="iniciando a bid controller">
+      <option name="closed" value="true" />
+      <created>1738984123662</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738984123662</updated>
+    </task>
+    <task id="LOCAL-00013" summary="adicionando consumidor de leiloes criados">
+      <option name="closed" value="true" />
+      <created>1738984565381</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1738984565381</updated>
+    </task>
+    <task id="LOCAL-00014" summary="melhorando logica dos nossos lances">
+      <option name="closed" value="true" />
+      <created>1739053584947</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1739053584947</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ajustando um pequeno bug no consumidor de bids na api de leiloes">
+      <option name="closed" value="true" />
+      <created>1739054407248</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1739054407248</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Criando nosso service worker para encerrar leiloes expirados">
+      <option name="closed" value="true" />
+      <created>1739056940413</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1739056940413</updated>
+    </task>
+    <task id="LOCAL-00017" summary="adicionando primeira configuração para trabalhar com protobuf">
+      <option name="closed" value="true" />
+      <created>1739226296885</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1739226296885</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fechando configuração gRPC server">
+      <option name="closed" value="true" />
+      <created>1739227217568</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1739227217568</updated>
+    </task>
+    <task id="LOCAL-00019" summary="atualizando nosso gRPC Client para se comunicar com o Server">
+      <option name="closed" value="true" />
+      <created>1739229121861</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1739229121861</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ajustando nossos novos endpoints e api no gateway">
+      <option name="closed" value="true" />
+      <created>1739229488936</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1739229488936</updated>
+    </task>
+    <task id="LOCAL-00021" summary="dockerizando bidding service">
+      <option name="closed" value="true" />
+      <created>1739231075450</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1739231075450</updated>
+    </task>
+    <task id="LOCAL-00022" summary="corrigindo typo no dockercompose">
+      <option name="closed" value="true" />
+      <created>1739231837896</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1739231837896</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +594,20 @@
     <MESSAGE value="Adicionando mongodb ao projeto" />
     <MESSAGE value="fechando filtros de consulta" />
     <MESSAGE value="adicionando comunicação sincrona Http entre servicos e ajustando initDb para consultar dados ao rodar" />
-    <option name="LAST_COMMIT_MESSAGE" value="adicionando comunicação sincrona Http entre servicos e ajustando initDb para consultar dados ao rodar" />
+    <MESSAGE value="criando bid service" />
+    <MESSAGE value="criando entidades" />
+    <MESSAGE value="iniciando a criação de bids" />
+    <MESSAGE value="iniciando a bid controller" />
+    <MESSAGE value="adicionando consumidor de leiloes criados" />
+    <MESSAGE value="melhorando logica dos nossos lances" />
+    <MESSAGE value="ajustando um pequeno bug no consumidor de bids na api de leiloes" />
+    <MESSAGE value="Criando nosso service worker para encerrar leiloes expirados" />
+    <MESSAGE value="adicionando primeira configuração para trabalhar com protobuf" />
+    <MESSAGE value="fechando configuração gRPC server" />
+    <MESSAGE value="atualizando nosso gRPC Client para se comunicar com o Server" />
+    <MESSAGE value="ajustando nossos novos endpoints e api no gateway" />
+    <MESSAGE value="dockerizando bidding service" />
+    <MESSAGE value="corrigindo typo no dockercompose" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrigindo typo no dockercompose" />
   </component>
 </project>
