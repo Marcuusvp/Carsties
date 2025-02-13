@@ -111,6 +111,23 @@
     depends_on:
       - mongodb
       - rabbitmq
+  notify-svc:
+    image: marcusvp/notify-svc:latest
+    build:
+      context: .
+      dockerfile: src/NotificationService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - RabbitMq__Host=rabbitmq
+      - RabbitMq__Port=5672
+      - RabbitMq__Username=guest
+      - RabbitMq__Password=guest
+    ports:
+      - 7004:80
+    depends_on:
+      - rabbitmq
 volumes:
   pgdata:
   mongodata:
+
