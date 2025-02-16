@@ -86,5 +86,5 @@ export async function handleUploadImage(image: File): Promise<ImageProps | undef
   }
 
   export async function placedBidForAuction(auctionId: string, amount: number){
-    return await fetchWrapper.post(`bids?acutionId=${auctionId}&amount=${amount}`, {})
+    return await fetchWrapper.post(`bids?auctionId=${auctionId}&amount=${amount}`, {})
   }
