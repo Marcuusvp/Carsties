@@ -80,13 +80,6 @@ public class BidsController : ControllerBase
     [HttpGet("{auctionId}")]
     public async Task<ActionResult<List<BidDto>>> GetBidsForAuction(string auctionId)
     {
-        var auction = await DB.Find<Auction>().OneAsync(auctionId);
-
-        if (auction == null)
-        {
-            return NotFound();
-        }
-
         var bids = await DB.Find<Bid>()
             .Match(b => b.AuctionId == auctionId)
             .Sort(b => b.Descending(x => x.BidTime))
