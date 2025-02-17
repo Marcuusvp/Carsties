@@ -1,6 +1,6 @@
 'use server'
 
-import { fetchWrapper } from "@/lib/fetchWrapper";
+
 import { Auction, Bid, PagedResult } from "@/types";
 import { revalidatePath } from "next/cache";
 import { FieldValues } from "react-hook-form";
@@ -9,6 +9,7 @@ import {v4 as uuidV4} from "uuid"
 import { storage } from "../services/firebaseConnection"; 
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage"
 import { ImageProps } from "../auctions/ImageUploader";
+import { fetchWrapper } from "../lib/fetchWrapper";
 
 export async function getData(query: string): Promise<PagedResult<Auction>> {
     return await fetchWrapper.get(`search${query}`)
