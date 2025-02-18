@@ -137,6 +137,8 @@
       - /var/lib/web/data
     ports:
       - 3000:3000
+    env_file:
+      - frontend/web-app/.env.local
     environment:
       - AUTH_URL=http://localhost:3000
       - AUTH_URL_INTERNAL=http://web-app:3000
