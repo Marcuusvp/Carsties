@@ -16,7 +16,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const user = await getCurrentUser();
-  const notifyUrl = process.env.NEXT_NOTIFY_URL
+  const notifyUrl = process.env.NOTIFY_URL
   return (
     <html lang="en">
       <body>
