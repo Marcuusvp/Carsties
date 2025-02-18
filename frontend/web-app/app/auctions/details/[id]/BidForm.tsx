@@ -13,6 +13,7 @@ type Props = {
 }
 
 export default function BidForm({auctionId, highBid}: Props) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {register, handleSubmit, reset, formState: {errors}} = useForm();
     const addBid = useBidStore(state => state.addBid);
 

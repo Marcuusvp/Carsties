@@ -1,7 +1,6 @@
 import { useParamsStore } from '@/hooks/useParamsStore';
 import { Button, ButtonGroup } from 'flowbite-react';
 import React from 'react'
-import { IconBase } from 'react-icons';
 import { AiOutlineClockCircle, AiOutlineSortAscending } from 'react-icons/ai';
 import { BsFillStopCircleFill, BsStopwatchFill } from 'react-icons/bs';
 import { GiFinishLine, GiFlame } from 'react-icons/gi';

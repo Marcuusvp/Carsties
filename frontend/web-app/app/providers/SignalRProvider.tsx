@@ -28,8 +28,9 @@ export default function SignalRProvider({children, user, notifyUrl}: Props) {
         const auction = getDetailedViewData(finishedAuction.auctionId);
         return toast.promise(auction, {
             loading: 'Loading',
-            success: (auction) => <AuctionFinishedToast auction={auction} finishedAuction={finishedAuction} />,
-            error: (err) => 'Auction finished'
+            success: (auction: Auction) => <AuctionFinishedToast auction={auction} finishedAuction={finishedAuction} />,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+            error: (err: any) => 'Auction finished'
         }, {success: {duration: 5000, icon: null}})
     }, [])
 

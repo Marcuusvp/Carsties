@@ -15,6 +15,7 @@ async function get(url:string) {
     return handleResponse(response);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 async function post(url:string, body: {}) {
     const requestOptions = {
         method: 'POST',
@@ -27,6 +28,7 @@ async function post(url:string, body: {}) {
     return handleResponse(response);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 async function put(url:string, body: {}) {
     const requestOptions = {
         method: 'PUT',
@@ -55,6 +57,7 @@ async function getHeaders() {
 
     const headers = {
         'Content-type': 'application/json'
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any;
     if (session?.accessToken){
         headers.Authorization = 'Bearer ' + session.accessToken 
@@ -69,6 +72,7 @@ async function handleResponse(response: Response) {
     try {
         data = text && JSON.parse(text);
         
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
         data = text;
     }

@@ -47,6 +47,7 @@ export default function AuctionForm({auction}: Props) {
             }
             resetImages()
             router.push(`/auctions/details/${id}`)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch(error: any) {
             toast.error(error.status + ' ' + error.message)
         }
@@ -70,7 +71,7 @@ export default function AuctionForm({auction}: Props) {
             reset({make, model, color, mileage, year})
         }
         setFocus('make')
-    }, [setFocus])
+    }, [auction, reset, setFocus])
 
     useEffect(() => {
         if (imgUrl.length > 0) {
