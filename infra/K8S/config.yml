@@ -66,3 +66,15 @@ data:
   ConnectionStrings__DefaultConnection: Server=postgres-clusterip:5432;User Id=postgres;Password=postgrespw;Database=identity
   IssuerUri: http://id.carsties.local
   ClientApp: http://app.carsties.local
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webapp-svc-config
+data:
+  AUTH_URL: http://app.carsties.local
+  AUTH_URL_INTERNAL: http://web-app:3000
+  API_URL: http://gateway-svc/
+  ID_URL: http://id.carsties.local
+  ID_URL_INTERNAL: http://identity-svc
+  NOTIFY_URL: http://api.carsties.local/notifications
