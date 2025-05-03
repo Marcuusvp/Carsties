@@ -8,7 +8,7 @@ data:
   RabbitMq__Host: rabbit-clusterip
   RabbitMq__Username: rabbit
   RabbitMq__Password: rabbitpw
-  IdentityServiceUrl: http://identity-svc
+  IdentityServiceUrl: http://identity-clusterip
   Kestrel__Endpoints__Grpc__Protocols: Http2
   Kestrel__Endpoints__Grpc__Url: http://+:7777
   Kestrel__Endpoints__WebApi__Protocols: Http1
@@ -54,6 +54,7 @@ kind: ConfigMap
 metadata:
   name: gateway-svc-config
 data:
+  ASPNETCORE_URLS: http://+:80
   ClientApp: https://app.carsties.local
   IdentityServiceUrl: http://identity-clusterip
 ---
@@ -73,8 +74,8 @@ metadata:
   name: webapp-svc-config
 data:
   AUTH_URL: https://app.carsties.local
-  AUTH_URL_INTERNAL: http://web-app:3000
-  API_URL: http://gateway-svc/
-  ID_URL: http://id.carsties.local
-  ID_URL_INTERNAL: http://identity-svc
+  AUTH_URL_INTERNAL: http://webapp-clusterip:3000
+  API_URL: http://gateway-clusterip/
+  ID_URL: https://id.carsties.local
+  ID_URL_INTERNAL: http://identity-clusterip
   NOTIFY_URL: https://api.carsties.local/notifications
