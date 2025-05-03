@@ -5,6 +5,13 @@ metadata:
   labels:
     name: ingress-svc
 spec:
+  ingressClassName: nginx
+  tls: 
+  - hosts:
+    - app.carsties.local
+    - api.carsties.local
+    - id.carsties.local
+    secretName: carsties-app-tls
   rules:
   - host: app.carsties.local
     http:
