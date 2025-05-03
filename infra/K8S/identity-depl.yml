@@ -11,6 +11,8 @@ spec:
       labels:
         app: identity-svc
     spec:
+      securityContext:
+        runAsUser: 0
       containers:
       - name: identity-svc
         image: marcusvp/identity-svc
@@ -20,6 +22,16 @@ spec:
               name: identity-svc-config
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: key-store
+          mountPath: /app/keys
+        - name: dataprotection-keys
+          mountPath: /home/app/.aspnet/DataProtection-Keys
+      volumes:
+      - name: key-store
+        emptyDir: {}
+      - name: dataprotection-keys
+        emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
